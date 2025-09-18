@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="sr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numerološki vodič</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+Pro:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <h1>Numerološki vodič</h1>
+        <p>
+          Unesi svoje ime i datum rođenja kako bi otkrio svoje ključne numerološke
+          brojeve – životni put, izražaj, duševnu želju i ličnost.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Unesi podatke</h2>
+        <form id="numerology-form" novalidate>
+          <div class="form-row">
+            <label for="full-name">Ime i prezime</label>
+            <input
+              type="text"
+              id="full-name"
+              name="full-name"
+              placeholder="npr. Ana Petrović"
+              required
+            />
+          </div>
+          <div class="form-row">
+            <label for="birth-date">Datum rođenja</label>
+            <input type="date" id="birth-date" name="birth-date" required />
+          </div>
+          <button type="submit" class="btn">Izračunaj</button>
+          <p class="form-hint">
+            * Podaci se obrađuju samo u tvom pregledaču – ništa se ne čuva niti
+            šalje na server.
+          </p>
+          <p class="error" id="form-error" role="alert" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="results" id="results" aria-live="polite" hidden>
+        <h2>Rezultati tumačenja</h2>
+        <div class="results__grid" id="results-grid"></div>
+        <section class="card card--muted" id="number-stories">
+          <h3>Šta znače tvoji brojevi?</h3>
+          <div id="number-descriptions" class="number-descriptions"></div>
+        </section>
+      </section>
+
+      <section class="card card--info">
+        <h2>Kako funkcioniše numerologija?</h2>
+        <p>
+          Pitiagorejska numerologija svakom slovu dodeljuje broj od 1 do 9, dok se
+          datum rođenja svodi na jednocifren broj. U procesu se poštuju tzv.
+          <em>glavni brojevi</em> 11, 22 i 33 koji se ne svode dalje. Oni se smatraju
+          snažnim pojačivačima osobina.
+        </p>
+        <details>
+          <summary>Prikaz mapa vrednosti slova</summary>
+          <div class="letter-map">
+            <div>
+              <span>1:</span> A, J, S
+            </div>
+            <div>
+              <span>2:</span> B, K, T
+            </div>
+            <div>
+              <span>3:</span> C, L, U
+            </div>
+            <div>
+              <span>4:</span> D, M, V
+            </div>
+            <div>
+              <span>5:</span> E, N, W
+            </div>
+            <div>
+              <span>6:</span> F, O, X
+            </div>
+            <div>
+              <span>7:</span> G, P, Y
+            </div>
+            <div>
+              <span>8:</span> H, Q, Z
+            </div>
+            <div>
+              <span>9:</span> I, R
+            </div>
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>&copy; <span id="current-year"></span> Numerološki vodič</small>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
